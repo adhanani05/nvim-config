@@ -31,7 +31,7 @@ return {
         flavour = "mocha", -- since mocha was too dark for you
         require("catppuccin").setup({
           flavour = "mocha", -- or frappe/mocha/latte
-          transparent_background = false, 
+          transparent_background = false,
         }),
         integrations = {
           treesitter = true,
@@ -62,7 +62,7 @@ return {
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer", "pyright", "golangci-lint-langserver" },
+      ensure_installed = { "lua_ls", "rust_analyzer", "pyright", "clangd" },
     },
     dependencies = {
       { "mason-org/mason.nvim", opts = {} },
@@ -96,7 +96,7 @@ return {
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.stylua,
-
+          null_ls.builtins.formatting.clang_format,
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.isort,
           null_ls.builtins.formatting.rustfmt,
